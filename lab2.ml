@@ -239,7 +239,7 @@ map2 to reimplement zip.
 ......................................................................*)
 
 let zip_ho (x : int list) (y : int list) : (int * int) list =
-  failwith "sum_ho not implemented" ;;
+  List.map2 (fun x y -> (x, y)) x y ;;
 
 (*......................................................................
 Exercise 10: Define a function evens, using these higher-order
@@ -248,4 +248,4 @@ even numbers in its argument list.
 ......................................................................*)
 
 let evens : int list -> int list =
-  fun _ -> failwith "evens not implemented" ;;
+  fun lst -> List.filter (fun x -> x mod 2 = 0) lst ;;
